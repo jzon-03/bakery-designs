@@ -24,7 +24,7 @@ A collection of three beautiful, responsive bakery website templates built with 
 
 ## 🚀 Live Demo
 
-Visit the live demo: [https://YOUR_USERNAME.github.io/bakery-designs/](https://YOUR_USERNAME.github.io/bakery-designs/)
+Visit the live demo: [https://bakerydesigns.thepracticalapps.com/](https://bakerydesigns.thepracticalapps.com/)
 
 ## 🛠️ Development
 
@@ -83,8 +83,8 @@ This project is configured for automatic deployment to GitHub Pages using GitHub
    ```
 
 5. **Automatic deployment**
-   - The GitHub Action will automatically build and deploy on every push to the main branch
-   - Your site will be available at: `https://YOUR_USERNAME.github.io/REPOSITORY_NAME/`
+   - The GitHub Action will automatically build and deploy on every push to the master branch
+   - Your site will be available at: `https://bakerydesigns.thepracticalapps.com/`
 
 ### Manual Deployment
 
