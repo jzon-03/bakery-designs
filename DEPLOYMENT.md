@@ -35,7 +35,7 @@ npm run build:prod
 # 4. Commit and push changes
 git add .
 git commit -m "Setup GitHub Pages deployment"
-git push origin main
+git push origin master
 ```
 
 ## 🔍 Verify Deployment
