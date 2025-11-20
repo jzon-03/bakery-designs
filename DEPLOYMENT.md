@@ -14,7 +14,8 @@
    - [ ] Save settings
 
 3. **Repository Name Configuration**
-   - [ ] If repository name is NOT "bakery-designs", update the following files:
+   - [ ] If using a custom domain, update DNS settings to point to GitHub Pages
+   - [ ] For GitHub Pages subdomain, update the following files if repository name differs:
      - [ ] `angular.json` - Update `baseHref` in production config
      - [ ] `src/index.html` - Update `base href` tag
      - [ ] `src/404.html` - Update base href and redirect URLs
@@ -46,7 +47,7 @@ git push origin master
    - [ ] Look for green checkmark on latest commit
 
 2. **Live Site**
-   - [ ] Visit: `https://YOUR_USERNAME.github.io/REPOSITORY_NAME/`
+   - [ ] Visit: `https://bakerydesigns.thepracticalapps.com/`
    - [ ] Test navigation between all three templates
    - [ ] Verify responsive design on different screen sizes
    - [ ] Check that all fonts and styles load correctly
