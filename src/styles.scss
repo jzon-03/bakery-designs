@@ -1,1 +1,38 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global styles for the Bakery Website */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  color: #2C1810;
+  overflow-x: hidden;
+}
+
+// Global variables
+:root {
+  --primary-color: #8B4513;
+  --secondary-color: #D4AF37;
+  --accent-color: #FFA500;
+  --text-dark: #2C1810;
+  --text-light: #6B4E3D;
+  --cream: #FFF8DC;
+  --white: #FFFFFF;
+  --gray-light: #F5F5F5;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+// Remove default Angular router outlet styles
+router-outlet {
+  display: block;
+}

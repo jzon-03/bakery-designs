@@ -1,0 +1,268 @@
+<!-- Navigation -->
+<nav class="modern-nav">
+  <div class="nav-container">
+    <div class="logo-modern">
+      <span class="logo-icon">🍞</span>
+      <span class="logo-text">ARTISAN</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="/bakery-template-2/#home">Home</a></li>
+      <li><a href="/bakery-template-2/#menu">Menu</a></li>
+      <li><a href="/bakery-template-2/#story">Our Story</a></li>
+      <li><a href="/bakery-template-2/#contact">Contact</a></li>
+    </ul>
+    <button class="order-btn">Order Now</button>
+  </div>
+</nav>
+
+<!-- Hero Section with Video Background Feel -->
+<section id="home" class="hero-modern">
+  <div class="hero-overlay">
+    <div class="hero-content-modern">
+      <h1 class="hero-title-large">FRESH BAKED<br><span class="accent-text">DAILY</span></h1>
+      <p class="hero-desc">Premium artisan bakery crafting exceptional breads, pastries, and desserts since 1985</p>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number">35+</span>
+          <span class="stat-label">Years Experience</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">150+</span>
+          <span class="stat-label">Daily Varieties</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Organic Flour</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Products Grid -->
+<section class="featured-grid">
+  <div class="grid-container">
+    <div class="featured-item large">
+      <div class="featured-content">
+        <h2>Signature Sourdough</h2>
+        <p>Our 48-hour fermented sourdough with a perfect crust and tangy flavor</p>
+        <span class="featured-price">$8.50</span>
+      </div>
+      <div class="featured-image">🥖</div>
+    </div>
+
+    <div class="featured-item">
+      <div class="featured-content">
+        <h3>Croissants</h3>
+        <p>Buttery, flaky perfection</p>
+        <span class="featured-price">$3.75</span>
+      </div>
+      <div class="featured-image small">🥐</div>
+    </div>
+
+    <div class="featured-item">
+      <div class="featured-content">
+        <h3>Artisan Donuts</h3>
+        <p>Hand-crafted daily</p>
+        <span class="featured-price">$4.25</span>
+      </div>
+      <div class="featured-image small">🍩</div>
+    </div>
+
+    <div class="featured-item wide">
+      <div class="featured-content">
+        <h2>Custom Wedding Cakes</h2>
+        <p>Bespoke designs for your special day. Consultation available.</p>
+        <button class="consultation-btn">Book Consultation</button>
+      </div>
+      <div class="featured-image">🎂</div>
+    </div>
+  </div>
+</section>
+
+<!-- Menu Categories -->
+<section id="menu" class="menu-modern">
+  <div class="container">
+    <div class="section-header-modern">
+      <h2>Our Menu</h2>
+      <p>Handcrafted with passion, served with pride</p>
+    </div>
+
+    <div class="menu-tabs">
+      <button class="tab-btn active" (click)="setActiveCategory('all')">All Items</button>
+      <button class="tab-btn" (click)="setActiveCategory('breads')">Breads</button>
+      <button class="tab-btn" (click)="setActiveCategory('pastries')">Pastries</button>
+      <button class="tab-btn" (click)="setActiveCategory('desserts')">Desserts</button>
+      <button class="tab-btn" (click)="setActiveCategory('drinks')">Beverages</button>
+    </div>
+
+    <div class="menu-grid">
+      <div class="menu-item" *ngFor="let item of getFilteredMenuItems()">
+        <div class="menu-item-info">
+          <div class="menu-item-header">
+            <h4>{{item.name}}</h4>
+            <span class="menu-price">{{formatPrice(item.price)}}</span>
+          </div>
+          <p>{{item.description}}</p>
+          <div class="menu-item-meta">
+            <span class="menu-category">{{item.category}}</span>
+            <span class="menu-icon">{{item.icon}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Our Story Section -->
+<section id="story" class="story-modern">
+  <div class="story-container">
+    <div class="story-image-side">
+      <div class="story-image-placeholder">👨‍🍳</div>
+    </div>
+    <div class="story-content-side">
+      <div class="story-text">
+        <span class="story-label">Our Story</span>
+        <h2>Three Generations of Baking Excellence</h2>
+        <p>What started as a small family bakery in 1985 has grown into the city's most beloved artisan bakehouse. Our
+          commitment to traditional techniques combined with innovative flavors sets us apart.</p>
+
+        <div class="story-highlights">
+          <div class="highlight-item">
+            <span class="highlight-icon">🌱</span>
+            <div>
+              <h4>Sustainable Sourcing</h4>
+              <p>Direct partnerships with local farmers</p>
+            </div>
+          </div>
+          <div class="highlight-item">
+            <span class="highlight-icon">⚡</span>
+            <div>
+              <h4>Traditional Methods</h4>
+              <p>Stone-ground flour, wood-fired ovens</p>
+            </div>
+          </div>
+          <div class="highlight-item">
+            <span class="highlight-icon">💎</span>
+            <div>
+              <h4>Premium Quality</h4>
+              <p>Only the finest ingredients make the cut</p>
+            </div>
+          </div>
+        </div>
+
+        <button class="story-cta">Learn More About Us</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Newsletter Signup -->
+<section class="newsletter-modern">
+  <div class="newsletter-content">
+    <h2>Stay Fresh</h2>
+    <p>Get weekly updates on new items, seasonal specials, and baking tips</p>
+    <form class="newsletter-form">
+      <input type="email" placeholder="Enter your email address" required>
+      <button type="submit">Subscribe</button>
+    </form>
+    <span class="newsletter-note">Join 5,000+ subscribers. Unsubscribe anytime.</span>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact-modern">
+  <div class="contact-grid">
+    <div class="contact-info-modern">
+      <h2>Visit Our Bakery</h2>
+      <div class="contact-details">
+        <div class="contact-detail">
+          <span class="detail-label">Address</span>
+          <span class="detail-value">456 Artisan Avenue<br>Creative District, NY 10002</span>
+        </div>
+        <div class="contact-detail">
+          <span class="detail-label">Phone</span>
+          <span class="detail-value">(555) 234-BREAD</span>
+        </div>
+        <div class="contact-detail">
+          <span class="detail-label">Email</span>
+          <span class="detail-value">hello&#64;artisanbakery.com</span>
+        </div>
+      </div>
+
+      <div class="hours-modern">
+        <h3>Hours</h3>
+        <div class="hours-list">
+          <div class="hours-item">
+            <span>Monday - Friday</span>
+            <span>5:30 AM - 8:00 PM</span>
+          </div>
+          <div class="hours-item">
+            <span>Saturday</span>
+            <span>6:00 AM - 9:00 PM</span>
+          </div>
+          <div class="hours-item">
+            <span>Sunday</span>
+            <span>7:00 AM - 7:00 PM</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="map-placeholder">
+      <div class="map-content">
+        <span class="map-icon">🗺️</span>
+        <p>Interactive Map</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer-modern">
+  <div class="footer-content-modern">
+    <div class="footer-brand">
+      <div class="logo-modern">
+        <span class="logo-icon">🍞</span>
+        <span class="logo-text">ARTISAN</span>
+      </div>
+      <p>Crafting extraordinary baked goods with passion and precision.</p>
+    </div>
+
+    <div class="footer-links">
+      <div class="footer-column">
+        <h4>Menu</h4>
+        <ul>
+          <li><a href="#">Breads</a></li>
+          <li><a href="#">Pastries</a></li>
+          <li><a href="#">Desserts</a></li>
+          <li><a href="#">Beverages</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#">Catering</a></li>
+          <li><a href="#">Custom Cakes</a></li>
+          <li><a href="#">Corporate Orders</a></li>
+          <li><a href="#">Baking Classes</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Connect</h4>
+        <div class="social-links-modern">
+          <a href="#">📘</a>
+          <a href="#">📷</a>
+          <a href="#">🐦</a>
+          <a href="#">💼</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom-modern">
+    <p>&copy; 2024 Artisan Bakery. All rights reserved.</p>
+  </div>
+</footer>

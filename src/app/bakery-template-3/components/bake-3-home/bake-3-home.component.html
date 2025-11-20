@@ -1,0 +1,274 @@
+<!-- Colorful Header -->
+<header class="colorful-header">
+  <nav class="rainbow-nav">
+    <div class="nav-wrapper">
+      <div class="logo-fun">
+        <span class="logo-emoji">🧁</span>
+        <h2>Sweet Dreams Bakery</h2>
+      </div>
+      <ul class="fun-menu">
+        <li><a href="/bakery-template-3/#home" class="nav-item home">Home</a></li>
+        <li><a href="/bakery-template-3/#treats" class="nav-item treats">Treats</a></li>
+        <li><a href="/bakery-template-3/#specials" class="nav-item specials">Specials</a></li>
+        <li><a href="/bakery-template-3/#fun" class="nav-item fun">Fun Zone</a></li>
+        <li><a href="/bakery-template-3/#visit" class="nav-item visit">Visit Us</a></li>
+      </ul>
+      <button class="order-rainbow">🛒 Order Now</button>
+    </div>
+  </nav>
+</header>
+
+<!-- Hero Splash -->
+<section id="home" class="hero-splash">
+  <div class="splash-content">
+    <div class="hero-text">
+      <h1 class="mega-title">Where Every Bite is <span class="rainbow-text">MAGICAL!</span></h1>
+      <p class="fun-subtitle">Handcrafted sweets and treats that bring smiles to faces and joy to hearts</p>
+      <div class="cta-buttons">
+        <button class="btn-pink">🎂 View Cakes</button>
+        <button class="btn-blue">🍪 See Cookies</button>
+        <button class="btn-yellow">🧁 Cupcake Menu</button>
+      </div>
+    </div>
+    <div class="hero-treats">
+      <div class="floating-treat treat-1">🍰</div>
+      <div class="floating-treat treat-2">🧁</div>
+      <div class="floating-treat treat-3">🍪</div>
+      <div class="floating-treat treat-4">🍩</div>
+      <div class="floating-treat treat-5">🎂</div>
+    </div>
+  </div>
+</section>
+
+<!-- Rotating Specials Banner -->
+<section class="specials-banner">
+  <div class="banner-content">
+    <h2>🎉 Daily Specials 🎉</h2>
+    <div class="rotating-specials">
+      <div class="special-item active">
+        <span class="special-emoji">☕</span>
+        <span class="special-text">Monday: Coffee & Croissant Combo $6.99</span>
+      </div>
+      <div class="special-item">
+        <span class="special-emoji">🧁</span>
+        <span class="special-text">Tuesday: Buy 6 Cupcakes, Get 2 FREE!</span>
+      </div>
+      <div class="special-item">
+        <span class="special-emoji">🍞</span>
+        <span class="special-text">Wednesday: Fresh Bread Loaves 25% Off</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Colorful Menu Grid -->
+<section id="treats" class="treats-grid">
+  <div class="treats-container">
+    <h2 class="section-title-fun">Our Sweet Treats</h2>
+    
+    <div class="treats-categories">
+      <button class="category-btn active" (click)="setActiveCategory('all')">🌟 All Treats</button>
+      <button class="category-btn" (click)="setActiveCategory('cakes')">🎂 Cakes</button>
+      <button class="category-btn" (click)="setActiveCategory('cupcakes')">🧁 Cupcakes</button>
+      <button class="category-btn" (click)="setActiveCategory('cookies')">🍪 Cookies</button>
+      <button class="category-btn" (click)="setActiveCategory('pastries')">🥐 Pastries</button>
+    </div>
+
+    <div class="treats-showcase">
+      <div class="treat-card" *ngFor="let treat of getFilteredTreats()">
+        <div class="treat-image">{{treat.emoji}}</div>
+        <div class="treat-info">
+          <h3>{{treat.name}}</h3>
+          <p>{{treat.description}}</p>
+          <div class="treat-footer">
+            <span class="treat-price">{{formatPrice(treat.price)}}</span>
+            <button class="add-btn">Add to Cart</button>
+          </div>
+        </div>
+        <div class="treat-badge" [ngClass]="treat.category">{{treat.badge}}</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Fun Facts Section -->
+<section id="fun" class="fun-facts">
+  <div class="facts-container">
+    <h2>🎈 Fun Bakery Facts 🎈</h2>
+    <div class="facts-grid">
+      <div class="fact-bubble bubble-1">
+        <div class="fact-emoji">🎂</div>
+        <h3>1000+</h3>
+        <p>Birthday Cakes Made This Year!</p>
+      </div>
+      <div class="fact-bubble bubble-2">
+        <div class="fact-emoji">☕</div>
+        <h3>50</h3>
+        <p>Cups of Coffee Daily</p>
+      </div>
+      <div class="fact-bubble bubble-3">
+        <div class="fact-emoji">👨‍👩‍👧‍👦</div>
+        <h3>500+</h3>
+        <p>Happy Families Served</p>
+      </div>
+      <div class="fact-bubble bubble-4">
+        <div class="fact-emoji">🌟</div>
+        <h3>5</h3>
+        <p>Star Rating from Customers</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Carousel -->
+<section class="happy-customers">
+  <div class="customers-container">
+    <h2>💝 What Our Sweet Customers Say 💝</h2>
+    <div class="testimonials-fun">
+      <div class="testimonial-card" *ngFor="let testimonial of customerReviews">
+        <div class="customer-avatar">{{testimonial.avatar}}</div>
+        <div class="testimonial-content">
+          <div class="stars-fun">{{getStarDisplay(testimonial.rating)}}</div>
+          <p>"{{testimonial.review}}"</p>
+          <h4>- {{testimonial.name}}</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Special Events Section -->
+<section id="specials" class="events-section">
+  <div class="events-container">
+    <h2>🎪 Special Events & Classes 🎪</h2>
+    <div class="events-grid">
+      <div class="event-card kids">
+        <div class="event-icon">👧👦</div>
+        <h3>Kids Baking Classes</h3>
+        <p>Every Saturday 10 AM - 12 PM</p>
+        <span class="event-price">$25 per child</span>
+        <button class="event-btn">Book Now</button>
+      </div>
+      <div class="event-card couples">
+        <div class="event-icon">💕</div>
+        <h3>Couples Cake Decorating</h3>
+        <p>Friday Evenings 7 PM - 9 PM</p>
+        <span class="event-price">$60 per couple</span>
+        <button class="event-btn">Reserve Spot</button>
+      </div>
+      <div class="event-card birthday">
+        <div class="event-icon">🎉</div>
+        <h3>Birthday Party Packages</h3>
+        <p>Complete party setup with cake & activities</p>
+        <span class="event-price">Starting at $150</span>
+        <button class="event-btn">Plan Party</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact & Location -->
+<section id="visit" class="visit-us">
+  <div class="visit-container">
+    <div class="visit-info">
+      <h2>🏠 Come Visit Our Sweet Shop! 🏠</h2>
+      <div class="location-details">
+        <div class="detail-item">
+          <span class="detail-emoji">📍</span>
+          <div>
+            <h4>Find Us</h4>
+            <p>789 Rainbow Street<br>Happy Valley, CA 90210</p>
+          </div>
+        </div>
+        <div class="detail-item">
+          <span class="detail-emoji">📞</span>
+          <div>
+            <h4>Call Us</h4>
+            <p>(555) SWEET-88</p>
+          </div>
+        </div>
+        <div class="detail-item">
+          <span class="detail-emoji">⏰</span>
+          <div>
+            <h4>Open Hours</h4>
+            <p>Mon-Sat: 7 AM - 8 PM<br>Sunday: 8 AM - 6 PM</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="newsletter-signup">
+        <h3>🎁 Join Our Sweet Newsletter! 🎁</h3>
+        <p>Get weekly treats, special offers, and baking tips!</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="your-email@example.com" required>
+          <button type="submit">Join the Fun!</button>
+        </form>
+      </div>
+    </div>
+    
+    <div class="visit-map">
+      <div class="map-fun">
+        <div class="map-decoration">
+          <span class="map-emoji">🗺️</span>
+          <h3>Interactive Map Coming Soon!</h3>
+          <p>Follow the sweet aroma and rainbow signs!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Colorful Footer -->
+<footer class="rainbow-footer">
+  <div class="footer-wrapper">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <div class="logo-fun">
+          <span class="logo-emoji">🧁</span>
+          <h2>Sweet Dreams Bakery</h2>
+        </div>
+        <p>Making the world sweeter, one treat at a time! 🌈</p>
+        <div class="social-fun">
+          <a href="#" class="social-link facebook">📘</a>
+          <a href="#" class="social-link instagram">📷</a>
+          <a href="#" class="social-link tiktok">🎵</a>
+          <a href="#" class="social-link youtube">📺</a>
+        </div>
+      </div>
+      
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Sweet Treats</h4>
+          <ul>
+            <li><a href="#">🎂 Custom Cakes</a></li>
+            <li><a href="#">🧁 Cupcakes</a></li>
+            <li><a href="#">🍪 Cookies</a></li>
+            <li><a href="#">🥧 Pies & Tarts</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#">🎪 Event Catering</a></li>
+            <li><a href="#">👨‍🍳 Baking Classes</a></li>
+            <li><a href="#">📦 Delivery</a></li>
+            <li><a href="#">🎁 Gift Cards</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>About Us</h4>
+          <ul>
+            <li><a href="#">📖 Our Story</a></li>
+            <li><a href="#">👥 Meet the Team</a></li>
+            <li><a href="#">🌟 Reviews</a></li>
+            <li><a href="#">📞 Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>© 2024 Sweet Dreams Bakery - Spreading Joy Since 1995 🌈✨</p>
+    </div>
+  </div>
+</footer>
